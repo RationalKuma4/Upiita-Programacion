@@ -1,2 +1,2 @@
-# Upiita-Programacion
+# Upiita-Programación
 Practicas realizadas durante el semestre
