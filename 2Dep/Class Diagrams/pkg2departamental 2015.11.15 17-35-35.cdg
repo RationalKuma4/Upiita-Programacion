@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="pkg2departamental">
+  <ClassDiagramComponents>
+    <Class name="Administrador" package="pkg2departamental" visibility="public" xPosition="18.0" yPosition="235.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="package"/>
+        <Constructor visibility="package">
+          <Argument type="int" name="eDAD"/>
+          <Argument type="int" name="iD"/>
+          <Argument type="String" name="nOMBRE"/>
+          <Argument type="String" name="pASSWORD"/>
+          <Argument type="String" name="uSUARIO"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="consultaInventario" returnType="String" visibility="package">
+          <Argument type="Producto[]" name="oProducto"/>
+        </Method>
+        <Method name="obtenerGanacias" returnType="double" visibility="package">
+          <Argument type="Vendedor[]" name="vendedor"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Archivos" package="pkg2departamental" visibility="public" xPosition="539.0" yPosition="849.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="package"/>
+      </Constructors>
+      <Methods>
+        <Method name="almacenarVendedor" returnType="void" visibility="public">
+          <Argument type="String" name="ruta"/>
+          <Argument type="Vendedor" name="vendedor"/>
+        </Method>
+        <Method name="leerVendedor" returnType="Vendedor[]" visibility="public">
+          <Argument type="String" name="ruta"/>
+        </Method>
+        <Method name="almacenarProdcuto" returnType="void" visibility="public">
+          <Argument type="String" name="ruta"/>
+          <Argument type="Producto" name="producto"/>
+        </Method>
+        <Method name="leerProducto" returnType="Producto[]" visibility="public">
+          <Argument type="String" name="ruta"/>
+        </Method>
+        <Method name="almacenarAdministrador" returnType="void" visibility="public">
+          <Argument type="String" name="ruta"/>
+          <Argument type="Administrador" name="administrador"/>
+        </Method>
+        <Method name="leerAdministrador" returnType="Administrador" visibility="public">
+          <Argument type="String" name="ruta"/>
+        </Method>
+        <Method name="almacenaTienda" returnType="void" visibility="public">
+          <Argument type="String" name="ruta"/>
+          <Argument type="Tienda" name="otienda"/>
+        </Method>
+        <Method name="leerTienda" returnType="Tienda" visibility="public">
+          <Argument type="String" name="ruta"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="LoginWindows" package="pkg2departamental" visibility="public" xPosition="539.0" yPosition="313.0">
+      <Fields>
+        <Field name="oVendedor" type="Vendedor" visibility="package"/>
+        <Field name="administra" type="Administrador" visibility="package"/>
+        <Field name="vendedor" type="Vendedor" visibility="package"/>
+        <Field name="administrador" type="Administrador" visibility="package"/>
+        <Field name="indice" type="int" visibility="package"/>
+        <Field name="conteoIntentos" type="int" visibility="package"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jDialog1" type="javax.swing.JDialog" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPasswordField1" type="javax.swing.JPasswordField" visibility="private"/>
+        <Field name="jTextField1" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="RecibeObejetos" returnType="void" visibility="public">
+          <Argument type="Vendedor" name="ovendedor"/>
+          <Argument type="Administrador" name="admin"/>
+        </Method>
+        <Method name="BuscaUsuarioCuenta" returnType="Vendedor" visibility="package">
+          <Argument type="String" name="tbUsuario"/>
+        </Method>
+        <Method name="BuscaAdmin" returnType="Administrador" visibility="package">
+          <Argument type="String" name="tbUsuario"/>
+        </Method>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jPasswordField1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Main" package="pkg2departamental" visibility="public" xPosition="1154.0" yPosition="616.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Persona" package="pkg2departamental" visibility="public" isAbstract="true" xPosition="512.0" yPosition="14.0">
+      <Fields>
+        <Field name="edad" type="int" visibility="package"/>
+        <Field name="id" type="int" visibility="package"/>
+        <Field name="nombre" type="String" visibility="package"/>
+        <Field name="usuario" type="String" visibility="package"/>
+        <Field name="password" type="String" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package"/>
+        <Constructor visibility="package">
+          <Argument type="int" name="eDAD"/>
+          <Argument type="int" name="iD"/>
+          <Argument type="String" name="nOMBRE"/>
+          <Argument type="String" name="pASSWORD"/>
+          <Argument type="String" name="uSUARIO"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Producto" package="pkg2departamental" visibility="public" xPosition="1024.0" yPosition="247.0">
+      <Fields>
+        <Field name="id" type="int" visibility="package"/>
+        <Field name="nombre" type="String" visibility="package"/>
+        <Field name="precio" type="double" visibility="package"/>
+        <Field name="cantidadDisponible" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package"/>
+        <Constructor visibility="package">
+          <Argument type="int" name="iD"/>
+          <Argument type="String" name="nOMBRE"/>
+          <Argument type="double" name="pRECIO"/>
+          <Argument type="int" name="cANIDAD_DISPONIBLE"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="VerDisponibilidad" returnType="void" visibility="package"/>
+        <Method name="VerInformacionProducto" returnType="void" visibility="package"/>
+        <Method name="VerInformacionProductoPanel" returnType="String" visibility="package"/>
+        <Method name="getId" returnType="int" visibility="package"/>
+        <Method name="getNombre" returnType="String" visibility="package"/>
+        <Method name="getPrecio" returnType="double" visibility="package"/>
+        <Method name="getCantidadDiponible" returnType="int" visibility="package"/>
+        <Method name="setCantidadDiponible" returnType="void" visibility="package">
+          <Argument type="int" name="canitdad"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Tienda" package="pkg2departamental" visibility="public" xPosition="18.0" yPosition="14.0">
+      <Fields>
+        <Field name="direccion" type="String" visibility="package"/>
+        <Field name="nombreTienda" type="String" visibility="package"/>
+        <Field name="ganancias" type="double" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package">
+          <Argument type="String" name="dIRECCION"/>
+          <Argument type="String" name="nOMBRE"/>
+          <Argument type="double" name="gANANCIAS"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="ImprimirTienda" returnType="String" visibility="package"/>
+      </Methods>
+    </Class>
+    <Class name="Vendedor" package="pkg2departamental" visibility="public" xPosition="1024.0" yPosition="14.0">
+      <Fields>
+        <Field name="puesto" type="String" visibility="package"/>
+        <Field name="ventas" type="double" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package"/>
+        <Constructor visibility="package">
+          <Argument type="int" name="eDAD"/>
+          <Argument type="int" name="iD"/>
+          <Argument type="String" name="nOMBRE"/>
+          <Argument type="String" name="pUESTO"/>
+          <Argument type="double" name="vENTAS"/>
+          <Argument type="String" name="pASSWORD"/>
+          <Argument type="String" name="uSUARIO"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="ImprimirVendedor" returnType="String" visibility="package"/>
+        <Method name="Vender" returnType="double" visibility="package">
+          <Argument type="Producto" name="oProducto"/>
+          <Argument type="Vendedor" name="vendedor"/>
+          <Argument type="int" name="cantidadProducto"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="VentanaAdmin" package="pkg2departamental" visibility="public" xPosition="18.0" yPosition="436.0">
+      <Fields>
+        <Field name="archivo" type="Archivos" visibility="package"/>
+        <Field name="oVendedor" type="Vendedor" visibility="package"/>
+        <Field name="oProducto" type="Producto" visibility="package"/>
+        <Field name="administrador" type="Administrador" visibility="package"/>
+        <Field name="rutaArchivos" type="String" visibility="package"/>
+        <Field name="archivoProdcutos" type="String" visibility="package"/>
+        <Field name="archivoTienda" type="String" visibility="package"/>
+        <Field name="oTienda" type="Tienda" visibility="package"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton3" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton4" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton5" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jEditorPane1" type="javax.swing.JEditorPane" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="RecibeParametros" returnType="void" visibility="package">
+          <Argument type="Vendedor" name="ovendedor"/>
+          <Argument type="Administrador" name="admin"/>
+        </Method>
+        <Method name="GetProductos" returnType="Producto[]" visibility="package"/>
+        <Method name="GetTienda" returnType="Tienda" visibility="package"/>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton4ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton3ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton5ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="VentanaVendedor" package="pkg2departamental" visibility="public" xPosition="1513.0" yPosition="247.0">
+      <Fields>
+        <Field name="archivo" type="Archivos" visibility="package"/>
+        <Field name="oVendedor" type="Vendedor" visibility="package"/>
+        <Field name="oProducto" type="Producto" visibility="package"/>
+        <Field name="vendedor" type="Vendedor" visibility="package"/>
+        <Field name="producto" type="Producto" visibility="package"/>
+        <Field name="rutaArchivos" type="String" visibility="package"/>
+        <Field name="archivoPersonas" type="String" visibility="package"/>
+        <Field name="archivoProdcutos" type="String" visibility="package"/>
+        <Field name="indiceg" type="int" visibility="package"/>
+        <Field name="procutoVen" type="Producto" visibility="package"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton3" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton4" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jComboBox1" type="javax.swing.JComboBox" visibility="private"/>
+        <Field name="jEditorPane1" type="javax.swing.JEditorPane" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jTextField1" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="recibeObejtos" returnType="void" visibility="package">
+          <Argument type="Vendedor" name="ovendedor"/>
+        </Method>
+        <Method name="GetProductos" returnType="Producto[]" visibility="package"/>
+        <Method name="jButton3ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton4ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="IArchivos" package="pkg2departamental" visibility="public" xPosition="1039.0" yPosition="864.0">
+      <Methods>
+        <Method name="almacenarVendedor" returnType="void" visibility="package">
+          <Argument type="String" name="ruta"/>
+          <Argument type="Vendedor" name="vendedor"/>
+        </Method>
+        <Method name="leerVendedor" returnType="Vendedor[]" visibility="package">
+          <Argument type="String" name="ruta"/>
+        </Method>
+        <Method name="almacenarProdcuto" returnType="void" visibility="package">
+          <Argument type="String" name="ruta"/>
+          <Argument type="Producto" name="producto"/>
+        </Method>
+        <Method name="leerProducto" returnType="Producto[]" visibility="package">
+          <Argument type="String" name="ruta"/>
+        </Method>
+        <Method name="almacenarAdministrador" returnType="void" visibility="package">
+          <Argument type="String" name="ruta"/>
+          <Argument type="Administrador" name="administrador"/>
+        </Method>
+        <Method name="leerAdministrador" returnType="Administrador" visibility="package">
+          <Argument type="String" name="ruta"/>
+        </Method>
+        <Method name="almacenaTienda" returnType="void" visibility="package">
+          <Argument type="String" name="ruta"/>
+          <Argument type="Tienda" name="otienda"/>
+        </Method>
+        <Method name="leerTienda" returnType="Tienda" visibility="package">
+          <Argument type="String" name="ruta"/>
+        </Method>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="Tiene" source="pkg2departamental.Tienda" target="pkg2departamental.Persona" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="archivo" source="pkg2departamental.VentanaAdmin" target="pkg2departamental.Archivos" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="archivo" source="pkg2departamental.VentanaVendedor" target="pkg2departamental.Archivos" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="Entra" source="pkg2departamental.LoginWindows" target="pkg2departamental.VentanaAdmin" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="Administra" source="pkg2departamental.Administrador" target="pkg2departamental.Vendedor" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="Obtiene Ganancias" source="pkg2departamental.Administrador" target="pkg2departamental.Producto" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <IsRelation name="es" source="pkg2departamental.Administrador" target="pkg2departamental.Persona"/>
+    <HasRelation name="Entra" source="pkg2departamental.LoginWindows" target="pkg2departamental.VentanaVendedor" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="es" source="pkg2departamental.Vendedor" target="pkg2departamental.Persona"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="pkg2departamental.Archivos" target="pkg2departamental.IArchivos"/>
+    <HasRelation name="Vende" source="pkg2departamental.Vendedor" target="pkg2departamental.Producto" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

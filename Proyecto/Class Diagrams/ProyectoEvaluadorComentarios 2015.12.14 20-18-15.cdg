@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ProyectoEvaluadorComentarios">
+  <ClassDiagramComponents>
+    <Class name="Administrador" package="proyectoevaluadorcomentarios" visibility="public" xPosition="922.0" yPosition="15.0">
+      <Fields>
+        <Field name="puesto" type="String" visibility="package"/>
+        <Field name="usuario" type="String" visibility="package"/>
+        <Field name="crontasena" type="String" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package"/>
+        <Constructor visibility="package">
+          <Argument type="int" name="iDPERSONA"/>
+          <Argument type="String" name="nOMBRE"/>
+          <Argument type="String" name="pUESTO"/>
+          <Argument type="String" name="uSUARIO"/>
+          <Argument type="String" name="cONTRASENA"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="ArchivosObjetos" package="proyectoevaluadorcomentarios" visibility="public" xPosition="19.0" yPosition="320.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="package"/>
+      </Constructors>
+      <Methods>
+        <Method name="AlmacenarEstablecimiento" returnType="void" visibility="public">
+          <Argument type="String" name="ruta"/>
+          <Argument type="Establecimiento" name="establecimiento"/>
+        </Method>
+        <Method name="LeerEstablecimiento" returnType="Establecimiento[]" visibility="public">
+          <Argument type="String" name="ruta"/>
+        </Method>
+        <Method name="AlmacenarCalificador" returnType="void" visibility="public">
+          <Argument type="String" name="ruta"/>
+          <Argument type="Administrador" name="oCalificador"/>
+        </Method>
+        <Method name="LeerCalificador" returnType="Administrador[]" visibility="public">
+          <Argument type="String" name="ruta"/>
+        </Method>
+        <Method name="AlmacenarDiccionario" returnType="void" visibility="public">
+          <Argument type="String" name="ruta"/>
+          <Argument type="Diccionario" name="oDiccionario"/>
+        </Method>
+        <Method name="LeerDiccionario" returnType="Diccionario[]" visibility="public">
+          <Argument type="String" name="ruta"/>
+        </Method>
+        <Method name="AlmacenarProveedorComentarios" returnType="void" visibility="public">
+          <Argument type="String" name="ruta"/>
+          <Argument type="EvaluadorComentarios" name="oProveedorComentarios"/>
+        </Method>
+        <Method name="LeerProveedorComentarios" returnType="EvaluadorComentarios[]" visibility="public">
+          <Argument type="String" name="ruta"/>
+        </Method>
+        <Method name="AlmacenarComentario" returnType="void" visibility="public">
+          <Argument type="String" name="ruta"/>
+          <Argument type="Comentario" name="oComentario"/>
+        </Method>
+        <Method name="LeerComentario" returnType="Comentario[]" visibility="public">
+          <Argument type="String" name="ruta"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Comentario" package="proyectoevaluadorcomentarios" visibility="public" xPosition="19.0" yPosition="633.0">
+      <Fields>
+        <Field name="idComentario" type="int" visibility="package"/>
+        <Field name="idEstablecimiento" type="int" visibility="package"/>
+        <Field name="fecha" type="String" visibility="package"/>
+        <Field name="comentario" type="String" visibility="package"/>
+        <Field name="calificacion" type="double" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package"/>
+        <Constructor visibility="package">
+          <Argument type="int" name="iDCOMENTARIO"/>
+          <Argument type="int" name="iDESTABLECIMIENTO"/>
+          <Argument type="String" name="fECHA"/>
+          <Argument type="String" name="cOMENTARIO"/>
+          <Argument type="double" name="cALIFICACION"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="GuardaComentario" returnType="boolean" visibility="public">
+          <Argument type="String" name="comentario"/>
+          <Argument type="String" name="fecha"/>
+          <Argument type="int" name="idEstablecimiento"/>
+        </Method>
+        <Method name="GetComentarioxEstablecimiento" returnType="Comentario[]" visibility="public">
+          <Argument type="int" name="idEstablecimiento"/>
+        </Method>
+        <Method name="GetComentarioxEstablecimientoArchivo" returnType="Comentario[]" visibility="public">
+          <Argument type="int" name="idEstablecimiento"/>
+          <Argument type="int" name="idArchivo"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Diccionario" package="proyectoevaluadorcomentarios" visibility="public" xPosition="756.0" yPosition="487.0">
+      <Fields>
+        <Field name="idPalabra" type="int" visibility="package"/>
+        <Field name="palabra" type="String" visibility="package"/>
+        <Field name="calificacion" type="double" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package"/>
+        <Constructor visibility="package">
+          <Argument type="int" name="iDPALABRA"/>
+          <Argument type="String" name="pALABRA"/>
+          <Argument type="double" name="cALIFICACION"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="MuestraPalabra" returnType="String" visibility="public"/>
+        <Method name="GetOnePalbra" returnType="Diccionario" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="GuardaPalabra" returnType="boolean" visibility="public">
+          <Argument type="String" name="palabra"/>
+          <Argument type="double" name="calificacion"/>
+        </Method>
+        <Method name="EliminaPalabra" returnType="boolean" visibility="public">
+          <Argument type="int" name="idpalabra"/>
+        </Method>
+        <Method name="ModificaPalbra" returnType="boolean" visibility="public">
+          <Argument type="Diccionario" name="diccion"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Establecimiento" package="proyectoevaluadorcomentarios" visibility="public" xPosition="19.0" yPosition="936.0">
+      <Fields>
+        <Field name="idEstablecimiento" type="int" visibility="package"/>
+        <Field name="nombre" type="String" visibility="package"/>
+        <Field name="giro" type="String" visibility="package"/>
+        <Field name="direccion" type="String" visibility="package"/>
+        <Field name="calificacion" type="double" visibility="package"/>
+        <Field name="comentarios" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package"/>
+        <Constructor visibility="package">
+          <Argument type="int" name="iDESTABLECIMIENTO"/>
+          <Argument type="String" name="nOMBRE"/>
+          <Argument type="String" name="gIRO"/>
+          <Argument type="String" name="dIRECCION"/>
+          <Argument type="double" name="cALIFICACION"/>
+          <Argument type="int" name="cOMENTARIOS"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="InformacionEstablecimiento" returnType="String" visibility="public"/>
+        <Method name="GetEstablecimientoxId" returnType="Establecimiento" visibility="public">
+          <Argument type="int" name="idEst"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Evaluador" package="proyectoevaluadorcomentarios" visibility="public" xPosition="1180.0" yPosition="450.0">
+      <Fields>
+        <Field name="nombreEstablecimiento" type="String" visibility="package"/>
+        <Field name="fecha" type="String" visibility="package"/>
+        <Field name="concidencias" type="int" visibility="package"/>
+        <Field name="calificacion" type="double" visibility="package"/>
+        <Field name="markText" type="String" visibility="package"/>
+        <Field name="frame" type="JFrame" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package"/>
+      </Constructors>
+      <Methods>
+        <Method name="ProcesaComentario" returnType="void" visibility="public">
+          <Argument type="int" name="establecimiento"/>
+          <Argument type="int" name="archivoid"/>
+        </Method>
+        <Method name="Condidencias" returnType="Evaluador" visibility="private">
+          <Argument type="String" name="palabras"/>
+        </Method>
+        <Method name="PromedioComentario" returnType="double" visibility="private">
+          <Argument type="int" name="numeroCon"/>
+          <Argument type="double" name="calif"/>
+        </Method>
+        <Method name="ProcesaInformacion" returnType="String" visibility="private">
+          <Argument type="Evaluador" name="informacion"/>
+        </Method>
+        <Method name="jActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="initAndShowGUI" returnType="void" visibility="private"/>
+        <Method name="initFX" returnType="void" visibility="private">
+          <Argument type="JFXPanel" name="fxPanel"/>
+        </Method>
+        <Method name="corre" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="EvaluadorComentarios" package="proyectoevaluadorcomentarios" visibility="public" xPosition="700.0" yPosition="257.0">
+      <Fields>
+        <Field name="puesto" type="String" visibility="package"/>
+        <Field name="usuario" type="String" visibility="package"/>
+        <Field name="contrasena" type="String" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package"/>
+        <Constructor visibility="package">
+          <Argument type="String" name="pUESTO"/>
+          <Argument type="int" name="iDPERSONA"/>
+          <Argument type="String" name="nOMBRE"/>
+          <Argument type="String" name="uSUARIO"/>
+          <Argument type="String" name="cONTRASENA"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Persona" package="proyectoevaluadorcomentarios" visibility="public" isAbstract="true" xPosition="633.0" yPosition="17.0">
+      <Fields>
+        <Field name="idPersona" type="int" visibility="package"/>
+        <Field name="nombre" type="String" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package"/>
+        <Constructor visibility="package">
+          <Argument type="int" name="iDPERSONA"/>
+          <Argument type="String" name="nOMBRE"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="ProyectoEvaluadorComentarios" package="proyectoevaluadorcomentarios" visibility="public" xPosition="1811.0" yPosition="895.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="VentanaComentarios" package="proyectoevaluadorcomentarios" visibility="public" xPosition="2320.0" yPosition="15.0">
+      <Fields>
+        <Field name="archivo" type="ArchivosObjetos" visibility="package"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton3" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jComboBox1" type="javax.swing.JComboBox" visibility="private"/>
+        <Field name="jFileChooser1" type="javax.swing.JFileChooser" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jTextField1" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="IniciaDatos" returnType="void" visibility="public"/>
+        <Method name="jButton3ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="VentanaDiccionario" package="proyectoevaluadorcomentarios" visibility="public" xPosition="1560.0" yPosition="17.0">
+      <Fields>
+        <Field name="rutaArchivos" type="String" visibility="package"/>
+        <Field name="archivoDiccionario" type="String" visibility="package"/>
+        <Field name="esRegistro" type="boolean" visibility="private"/>
+        <Field name="palabraId" type="int" visibility="private"/>
+        <Field name="archivo" type="ArchivosObjetos" visibility="package"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton3" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton4" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton5" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton6" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton7" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jEditorPane1" type="javax.swing.JEditorPane" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel3" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jTextField1" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextField2" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextField3" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton5ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton3ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton7ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton4ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton6ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="VentanaDireccion" package="proyectoevaluadorcomentarios" visibility="public" xPosition="2320.0" yPosition="424.0">
+      <Fields>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton3" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton3ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="VentanaDireccionComentario" package="proyectoevaluadorcomentarios" visibility="public" xPosition="1939.0" yPosition="529.0">
+      <Fields>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton3" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton3ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="VentanaEstablecimiento" package="proyectoevaluadorcomentarios" visibility="public" xPosition="1939.0" yPosition="17.0">
+      <Fields>
+        <Field name="archivo" type="ArchivosObjetos" visibility="package"/>
+        <Field name="estableci" type="List&lt;Establecimiento&gt;" visibility="package"/>
+        <Field name="rutaArchivos" type="String" visibility="package"/>
+        <Field name="archivoEstablecimientos" type="String" visibility="package"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton3" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jTextField1" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextField2" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextField3" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="DatosInciales" returnType="void" visibility="public"/>
+        <Method name="GuardaEstablecimientos" returnType="void" visibility="private">
+          <Argument type="Establecimiento" name="establecimiento"/>
+        </Method>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton3ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="VentanaEvaluarComentario" package="proyectoevaluadorcomentarios" visibility="public" xPosition="855.0" yPosition="879.0">
+      <Fields>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jComboBox1" type="javax.swing.JComboBox" visibility="private"/>
+        <Field name="jComboBox2" type="javax.swing.JComboBox" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="IniciaComponentes" returnType="void" visibility="public"/>
+        <Method name="jActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="VentanaInicio" package="proyectoevaluadorcomentarios" visibility="public" xPosition="1313.0" yPosition="841.0">
+      <Fields>
+        <Field name="esCalificador" type="boolean" visibility="package"/>
+        <Field name="esProveedor" type="boolean" visibility="package"/>
+        <Field name="calificadores" type="Administrador" visibility="package"/>
+        <Field name="proveedorComentarios" type="EvaluadorComentarios" visibility="package"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPasswordField1" type="javax.swing.JPasswordField" visibility="private"/>
+        <Field name="jTextField1" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="RecibeUsuarios" returnType="void" visibility="public">
+          <Argument type="Administrador" name="calif"/>
+          <Argument type="EvaluadorComentarios" name="proveedor"/>
+        </Method>
+        <Method name="ValidaCredenciales" returnType="boolean" visibility="private">
+          <Argument type="String" name="usuario"/>
+          <Argument type="String" name="contra"/>
+        </Method>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="IArchivos" package="proyectoevaluadorcomentarios" visibility="public" xPosition="19.0" yPosition="17.0">
+      <Methods>
+        <Method name="AlmacenarEstablecimiento" returnType="void" visibility="public">
+          <Argument type="String" name="ruta"/>
+          <Argument type="Establecimiento" name="establecimiento"/>
+        </Method>
+        <Method name="LeerEstablecimiento" returnType="Establecimiento[]" visibility="public">
+          <Argument type="String" name="ruta"/>
+        </Method>
+        <Method name="AlmacenarCalificador" returnType="void" visibility="public">
+          <Argument type="String" name="ruta"/>
+          <Argument type="Administrador" name="oCalificador"/>
+        </Method>
+        <Method name="LeerCalificador" returnType="Administrador[]" visibility="public">
+          <Argument type="String" name="ruta"/>
+        </Method>
+        <Method name="AlmacenarDiccionario" returnType="void" visibility="public">
+          <Argument type="String" name="ruta"/>
+          <Argument type="Diccionario" name="oDiccionario"/>
+        </Method>
+        <Method name="LeerDiccionario" returnType="Diccionario[]" visibility="public">
+          <Argument type="String" name="ruta"/>
+        </Method>
+        <Method name="AlmacenarProveedorComentarios" returnType="void" visibility="public">
+          <Argument type="String" name="ruta"/>
+          <Argument type="EvaluadorComentarios" name="oProveedorComentarios"/>
+        </Method>
+        <Method name="LeerProveedorComentarios" returnType="EvaluadorComentarios[]" visibility="public">
+          <Argument type="String" name="ruta"/>
+        </Method>
+        <Method name="AlmacenarComentario" returnType="void" visibility="public">
+          <Argument type="String" name="ruta"/>
+          <Argument type="Comentario" name="oComentario"/>
+        </Method>
+        <Method name="LeerComentario" returnType="Comentario[]" visibility="public">
+          <Argument type="String" name="ruta"/>
+        </Method>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="Gestiona" source="proyectoevaluadorcomentarios.ArchivosObjetos" target="proyectoevaluadorcomentarios.EvaluadorComentarios" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="Gestiona" source="proyectoevaluadorcomentarios.ArchivosObjetos" target="proyectoevaluadorcomentarios.Diccionario" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="proyectoevaluadorcomentarios.ArchivosObjetos" target="proyectoevaluadorcomentarios.IArchivos"/>
+    <HasRelation name="Evalua" source="proyectoevaluadorcomentarios.Evaluador" target="proyectoevaluadorcomentarios.Comentario" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="Gestiona" source="proyectoevaluadorcomentarios.ArchivosObjetos" target="proyectoevaluadorcomentarios.Administrador" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <IsRelation name="es" source="proyectoevaluadorcomentarios.Administrador" target="proyectoevaluadorcomentarios.Persona"/>
+    <IsRelation name="es" source="proyectoevaluadorcomentarios.EvaluadorComentarios" target="proyectoevaluadorcomentarios.Persona"/>
+    <HasRelation name="Gestiona" source="proyectoevaluadorcomentarios.ArchivosObjetos" target="proyectoevaluadorcomentarios.Establecimiento" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="Gestiona" source="proyectoevaluadorcomentarios.ArchivosObjetos" target="proyectoevaluadorcomentarios.Comentario" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="Tiene" source="proyectoevaluadorcomentarios.Establecimiento" target="proyectoevaluadorcomentarios.Comentario" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
